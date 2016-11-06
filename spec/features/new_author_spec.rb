@@ -7,4 +7,8 @@ describe "New author page", type: :feature do
     expect(page).to have_field("author_last_name")
     expect(page).to have_field("author_homepage")
   end
+
+  it "should containe a 'Create Author' submit button" do
+    expect(page).to have_field("commit", value: 'Create Author')
+  end
 end
