@@ -8,7 +8,8 @@ describe "New author page", type: :feature do
     expect(page).to have_field("author_homepage")
   end
 
-  it "should containe a 'Create Author' submit button" do
-    expect(page).to have_field("commit", value: 'Create Author')
+  it "should contain a 'Create Author' submit button" do
+    visit new_author_path
+    expect(page).to have_button("Create Author")
   end
 end
