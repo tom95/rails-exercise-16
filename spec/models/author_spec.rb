@@ -13,7 +13,7 @@ RSpec.describe Author, type: :model do
   describe "Author #name" do
     it "should return the full name" do
       author = build(:author)
-      expect(author.name).to equal("Alan Turing")
+      expect(author.name).to == "Alan Turing"
     end
   end
 
