@@ -9,4 +9,12 @@ RSpec.describe Author, type: :model do
     expect(author.last_name).to_not be_nil
     expect(author.homepage).to_not be_nil
   end
+
+  describe "Author #name" do
+    it "should return the full name" do
+      author = build(:author)
+      expect(author.name).to equal("Alan Turing")
+    end
+  end
+
 end
