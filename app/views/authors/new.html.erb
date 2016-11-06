@@ -1,5 +1,22 @@
 <h1>New author page</h1>
 
-<input type="text" name="first name">
-<input type="text" name="last name">
-<input type="text" name="homepage">
+<%= form_for :author do |f| %>
+	<div>
+		<%= f.label :first_name %>
+		<%= f.text_field :first_name %>
+	</div>
+
+	<div>
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name %>
+	</div>
+
+	<div>
+		<%= f.label :homepage %>
+		<%= f.text_field :homepage %>
+	</div>
+
+	<div>
+		<%= f.submit %>
+	</div>
+<% end %>

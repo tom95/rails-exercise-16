@@ -1,10 +1,10 @@
 require "rails_helper"
 
 describe "New author page", type: :feature do
-  it "should contain a field 'first name'" do
+  it "should contain a field first and last name and homepage" do
     visit new_author_path
-    expect(page).to have_field("first name")
-    expect(page).to have_field("last name")
-    expect(page).to have_field("homepage")
+    expect(page).to have_field("author_first_name")
+    expect(page).to have_field("author_last_name")
+    expect(page).to have_field("author_homepage")
   end
 end
