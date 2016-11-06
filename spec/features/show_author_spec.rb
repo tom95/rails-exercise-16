@@ -4,6 +4,6 @@ describe "Show author page", type: :feature do
   it "should display author details" do
     author = create(:author)
     visit author_path(author)
-    expect(page).to have_text("first name: alan")
+    expect(page).to have_text("First Name: Alan")
   end
 end
