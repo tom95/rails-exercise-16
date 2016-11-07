@@ -23,4 +23,9 @@ describe "New author page", type: :feature do
     author = Author.find_by(first_name: "Alan", last_name: "Turing")
     expect(author).to_not be_nil
   end
+
+  it "should not validate without last name" do
+    author = build(:author, first_name: "alan", last_name: nil, homepage: "http://example.com")
+    expect(author).to_not be_valid
+  end
 end
