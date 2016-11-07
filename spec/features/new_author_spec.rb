@@ -37,4 +37,15 @@ describe "New author page", type: :feature do
 
     expect(page).to have_text("Last name can't be blank")
   end
+
+  it "should save changes" do
+    author = create(:author)
+    visit edit_author_path(author)
+
+    fill_in "author_first_name", with: "Alan Mathison"
+    click_button "Save Author"
+
+    author = Author.find_by(last_name: "Turing")
+    expect(author.first_name).to eql("Alan Mathison")
+  end
 end
