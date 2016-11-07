@@ -11,4 +11,9 @@ describe "Index author page", type: :feature do
     expect(page).to have_text("Alan Turing")
     expect(page).to have_text("http://wikipedia.org/Alan_Turing")
   end
+
+  it "list first and last name in one column" do
+    visit authors_path
+    expect(page).to have_css("th", text: "Name")
+  end
 end
