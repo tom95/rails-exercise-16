@@ -16,4 +16,9 @@ describe "Index author page", type: :feature do
     visit authors_path
     expect(page).to have_css("th", text: "Name")
   end
+
+  it "link to the new author page" do
+    visit authors_path
+    expect(page).to have_css("a", text: "Add author")
+  end
 end
