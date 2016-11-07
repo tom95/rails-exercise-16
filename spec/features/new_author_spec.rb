@@ -31,8 +31,8 @@ describe "New author page", type: :feature do
 
   it "should show validation errors" do
     visit new_author_path
-    fill_in "author_first_name" "Alan"
-    fill_in "author_homepage" "http://example.com"
+    fill_in "author_first_name", with: "Alan"
+    fill_in "author_homepage", with: "http://example.com"
     click_button "Create Author"
 
     expect(page).to have_text("Last name can't be blank")
