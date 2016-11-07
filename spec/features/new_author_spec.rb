@@ -28,4 +28,13 @@ describe "New author page", type: :feature do
     author = build(:author, first_name: "alan", last_name: nil, homepage: "http://example.com")
     expect(author).to_not be_valid
   end
+
+  it "should show validation errors" do
+    visit new_author_path
+    fill_in "author_first_name" "Alan"
+    fill_in "author_homepage" "http://example.com"
+    click_button "Create Author"
+
+    expect(page).to have_text("Last name can't be blank")
+  end
 end
