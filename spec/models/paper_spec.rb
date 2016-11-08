@@ -15,4 +15,9 @@ RSpec.describe Paper, type: :model do
     paper = build(:paper, venue: nil)
     expect(paper).to_not be_valid
   end
+
+  it "should not validate without year" do
+    paper = build(:paper, year: nil)
+    expect(paper).to_not be_valid
+  end
 end
