@@ -1,4 +1,8 @@
 class PapersController < ApplicationController
+  def index
+    @papers = Paper.all
+  end
+
   def new
 	@paper = Paper.new
   end
@@ -16,8 +20,8 @@ class PapersController < ApplicationController
     @paper = Paper.find(params[:id])
   end
 
-  def index
-    @papers = Paper.all
+  def edit
+    @paper = Paper.find(params[:id])
   end
 
   private
