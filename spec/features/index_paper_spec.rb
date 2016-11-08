@@ -16,7 +16,7 @@ describe "Index paper page", type: :feature do
     visit papers_path
     expect(page).to have_css("a", text: "Destroy")
     click_link "Destroy"
-    expect(Author.find_by title: "COMPUTING MACHINERY AND INTELLIGENCE").to be_nil
+    expect(Paper.find_by title: "COMPUTING MACHINERY AND INTELLIGENCE").to be_nil
   end
 end
 
