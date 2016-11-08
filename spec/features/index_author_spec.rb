@@ -39,4 +39,11 @@ describe "Index author page", type: :feature do
     visit authors_path
     expect(page).to have_css("a", text: "Destroy")
   end
+
+  it "should have a link to delete an author" do
+    author_id = create(:author).id
+    visit authors_path
+    click_link "Destroy"
+    expect(Author.findBy id: author_id).to be_nil
+  end
 end
