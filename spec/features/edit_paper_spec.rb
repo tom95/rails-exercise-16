@@ -29,7 +29,6 @@ describe "Edit paper page", type: :feature do
   end
 
   it "should pre-select the actual authors in the drop downs" do
-    create(:author)
     paper = create(:paper)
     visit edit_paper_path(paper)
 
