@@ -22,6 +22,10 @@ describe "Edit paper page", type: :feature do
     paper = create(:paper)
     visit edit_paper_path(paper)
     expect(page).to have_field("Author 1")
+    expect(page).to have_field("Author 2")
+    expect(page).to have_field("Author 3")
+    expect(page).to have_field("Author 4")
+    expect(page).to have_field("Author 5")
   end
 end
 
