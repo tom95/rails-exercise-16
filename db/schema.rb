@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20161109085708) do
   create_table "papers", force: :cascade do |t|
     t.string   "title"
     t.string   "venue"
-    t.integer  "year"
+    t.string   "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
