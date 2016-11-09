@@ -41,6 +41,7 @@ describe "Edit paper page", type: :feature do
     visit edit_paper_path(paper)
 
     select "Peter Plagiarist", from: "Author 1"
+    click_button "Save Paper"
 
     expect((Paper.find(paper.id)).authors[0]).to eq(author)
   end
