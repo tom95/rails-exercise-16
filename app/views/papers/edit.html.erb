@@ -32,8 +32,10 @@
   </div>
 
   <div>
-    <%= f.label "Author 1", for: "paper_author_id_1" %>
-    <%= f.collection_select :author_ids, Author.all, :id, :name, {selected: @paper.author_ids[1], include_blank: '(none)'}, {name: "paper[author_ids][]", id: "paper_author_id_1" } %>
+  <% (1..5).each do |num| %>
+	<%= f.label "Author #{num}", for: "paper_author_id_#{num}" %>
+	<%= f.collection_select :author_ids, Author.all, :id, :name, {selected: @paper.author_ids[1], include_blank: '(none)'}, {name: "paper[author_ids][]", id: "paper_author_id_#{num}" } %>
+  <% end %>
   </div>
  
   <%= f.submit %>
