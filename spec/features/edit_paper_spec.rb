@@ -17,5 +17,11 @@ describe "Edit paper page", type: :feature do
     expect(new_paper).to_not be_nil
     expect(new_paper.title).to eq(paper.title)
   end
+
+  it "should allow to select 5 authors from 5 separate drop downs" do
+    paper = create(:paper)
+    visit edit_paper_path(paper)
+    expect(page).to have_field("Author 1")
+  end
 end
 
