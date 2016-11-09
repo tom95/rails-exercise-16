@@ -4,4 +4,10 @@
 <p>Venue: <%= @paper.venue %></p>
 <p>Year: <%= @paper.year %></p>
 
+<h2>Authors</h2>
+<ul>
+<% @paper.authors.each do |author| %>
+	<li><%= author.name %></li>
+<% end %>
+</ul>
 
